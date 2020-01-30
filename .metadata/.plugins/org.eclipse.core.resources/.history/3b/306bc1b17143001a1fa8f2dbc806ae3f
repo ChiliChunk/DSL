@@ -1,0 +1,60 @@
+package nicoLang.aspects
+
+import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+import nicoLang.FSM
+import org.eclipse.emf.ecore.resource.Resource
+import nicoLang.State
+import nicoLang.Transition
+import nicoLang.InitState
+import nicoLang.FinalState
+
+import nicoLang.NicoLangPackage
+
+import static extension nicoLang.aspects.FSMAspect.*
+import static extension nicoLang.aspects.StateAspect.*
+import static extension nicoLang.aspects.TransitionAspect.*
+import static extension nicoLang.aspects.InitStateAspect.*
+import static extension nicoLang.aspects.FinalStateAspect.*
+import fr.inria.diverse.k3.al.annotationprocessor.InitializeModel
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceImpl
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
+import org.eclipse.emf.common.util.URI
+
+class Interpreter{
+	def static void main (String [] args){
+		NicoLangPackage.eINSTANCE.class
+		Resource$Factory.Registry.INSTANCE.extensionToFactoryMap.put("xmi", new XMIResourceFactoryImpl)
+		var Resource resource = new ResourceSetImpl().getResource(URI.createURI('/home/nicolas/Dev/workspace-gemoc-2/NicoLang/model/FSM.xmi'),true)
+		var myfsm = resource.contents.get(0) as FSM
+		myfsm.execute
+	}
+}
+
+@Aspect(className=FSM)
+class FSMAspect {
+	 
+}
+
+@Aspect(className=State)
+class StateAspect {
+
+}
+
+@Aspect(className=Transition)
+class TransitionAspect {
+
+}
+
+@Aspect(className=InitState)
+class InitStateAspect extends StateAspect {
+
+}
+
+@Aspect(className=FinalState)
+class FinalStateAspect extends StateAspect {
+
+}
+
+
+

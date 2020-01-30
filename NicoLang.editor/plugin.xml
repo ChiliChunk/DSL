@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated nicoLang -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="nicoLang.presentation.NicoLangModelWizardID"
+            name="%_UI_NicoLangModelWizard_label"
+            class="nicoLang.presentation.NicoLangModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/NicoLangModelFile.gif">
+         <description>%_UI_NicoLangModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated nicoLang -->
+      <editor
+            id="nicoLang.presentation.NicoLangEditorID"
+            name="%_UI_NicoLangEditor_label"
+            icon="icons/full/obj16/NicoLangModelFile.gif"
+            extensions="nicolang"
+            class="nicoLang.presentation.NicoLangEditor"
+            contributorClass="nicoLang.presentation.NicoLangActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
