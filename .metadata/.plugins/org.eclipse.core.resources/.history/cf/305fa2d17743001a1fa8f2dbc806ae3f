@@ -1,6 +1,0 @@
-# List of the Java classes that have been aspectized and name of the aspect classes separated by comma
-	nicoLang.InitState = nicoLang.aspects.InitStateAspect
-	nicoLang.State = nicoLang.aspects.StateAspect
-	nicoLang.FSM = nicoLang.aspects.FSMAspect
-	nicoLang.FinalState = nicoLang.aspects.FinalStateAspect
-	nicoLang.Transition = nicoLang.aspects.TransitionAspect
